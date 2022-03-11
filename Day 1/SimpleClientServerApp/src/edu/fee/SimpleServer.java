@@ -17,7 +17,9 @@ public class SimpleServer {
         DataOutputStream socketDOS = new DataOutputStream(socketOutputStream);
 
 
-        String serverMsg = "Server: Hola Client";
+        // String serverMsg = "Server: Hola Client";
+        Scanner scanner = new Scanner(System.in);
+        String serverMsg = scanner.nextLine();
         socketDOS.writeUTF(serverMsg);
         System.out.println(serverMsg);
 

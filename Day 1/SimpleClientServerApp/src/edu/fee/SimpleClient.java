@@ -2,6 +2,7 @@ package edu.fee;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class SimpleClient {
     public static void main(String[] args) throws IOException {
@@ -29,7 +30,10 @@ public class SimpleClient {
 
         OutputStream outputStream = socket.getOutputStream();
         DataOutputStream socketDOS = new DataOutputStream(outputStream);
-        String clientMsg = "Client: Hi Server, How are you!!";
+//        String clientMsg = "Client: Hi Server, How are you!!";
+        Scanner scanner = new Scanner(System.in);
+        String clientMsg = scanner.nextLine();
+
         socketDOS.writeUTF(clientMsg);
         System.out.println(clientMsg);
 
